@@ -1,0 +1,183 @@
+# Languages without a translation use English, as permitted by TOS guide 8.5.3.
+
+[zh-cn]
+name = "WUD (What's Up Docker?)"
+auth = "Manfred Martin and WUD contributors"
+descript = "通过 WUD 网页界面监控 Docker 容器镜像更新，并配置更新通知。"
+release_note = "封装 WUD 9.8.0，支持 TOS 7、数据持久化和首次启动随机密码。"
+important = "需要 DockerEngine 及其 socket 访问权限。端口 13000。用户名 admin；初始密码见 DockerAppData/wud/store/.tos/initial-admin-password。socket 访问拥有 Docker API 权限。"
+
+[zh-hk]
+name = "WUD (What's Up Docker?)"
+auth = "Manfred Martin and WUD contributors"
+descript = "透過 WUD 網頁介面監控 Docker 容器映像更新，並設定更新通知。"
+release_note = "封裝 WUD 9.8.0，支援 TOS 7、資料持久化及首次啟動隨機密碼。"
+important = "需要 DockerEngine 及其 socket 存取權限。連接埠 13000。使用者 admin；初始密碼見 DockerAppData/wud/store/.tos/initial-admin-password。socket 存取擁有 Docker API 權限。"
+
+[en-us]
+name = "WUD (What's Up Docker?)"
+auth = "Manfred Martin and WUD contributors"
+descript = "Monitor Docker container image updates and configure notifications through the WUD web interface."
+release_note = "TOS 7 package of WUD 9.8.0. Persistent storage and generated initial credentials."
+important = "Requires DockerEngine and access to its socket. Open port 13000. User: admin; initial password: DockerAppData/wud/store/.tos/initial-admin-password. Docker socket access grants Docker API privileges."
+
+[ko-kr]
+name = "WUD (What's Up Docker?)"
+auth = "Manfred Martin and WUD contributors"
+descript = "Monitor Docker container image updates and configure notifications through the WUD web interface."
+release_note = "TOS 7 package of WUD 9.8.0. Persistent storage and generated initial credentials."
+important = "Requires DockerEngine and access to its socket. Open port 13000. User: admin; initial password: DockerAppData/wud/store/.tos/initial-admin-password. Docker socket access grants Docker API privileges."
+
+[ja-jp]
+name = "WUD (What's Up Docker?)"
+auth = "Manfred Martin and WUD contributors"
+descript = "Monitor Docker container image updates and configure notifications through the WUD web interface."
+release_note = "TOS 7 package of WUD 9.8.0. Persistent storage and generated initial credentials."
+important = "Requires DockerEngine and access to its socket. Open port 13000. User: admin; initial password: DockerAppData/wud/store/.tos/initial-admin-password. Docker socket access grants Docker API privileges."
+
+[de-de]
+name = "WUD (What's Up Docker?)"
+auth = "Manfred Martin and WUD contributors"
+descript = "Monitor Docker container image updates and configure notifications through the WUD web interface."
+release_note = "TOS 7 package of WUD 9.8.0. Persistent storage and generated initial credentials."
+important = "Requires DockerEngine and access to its socket. Open port 13000. User: admin; initial password: DockerAppData/wud/store/.tos/initial-admin-password. Docker socket access grants Docker API privileges."
+
+[fr-fr]
+name = "WUD (What's Up Docker?)"
+auth = "Manfred Martin and WUD contributors"
+descript = "Monitor Docker container image updates and configure notifications through the WUD web interface."
+release_note = "TOS 7 package of WUD 9.8.0. Persistent storage and generated initial credentials."
+important = "Requires DockerEngine and access to its socket. Open port 13000. User: admin; initial password: DockerAppData/wud/store/.tos/initial-admin-password. Docker socket access grants Docker API privileges."
+
+[it-it]
+name = "WUD (What's Up Docker?)"
+auth = "Manfred Martin and WUD contributors"
+descript = "Monitor Docker container image updates and configure notifications through the WUD web interface."
+release_note = "TOS 7 package of WUD 9.8.0. Persistent storage and generated initial credentials."
+important = "Requires DockerEngine and access to its socket. Open port 13000. User: admin; initial password: DockerAppData/wud/store/.tos/initial-admin-password. Docker socket access grants Docker API privileges."
+
+[es-es]
+name = "WUD (What's Up Docker?)"
+auth = "Manfred Martin and WUD contributors"
+descript = "Monitor Docker container image updates and configure notifications through the WUD web interface."
+release_note = "TOS 7 package of WUD 9.8.0. Persistent storage and generated initial credentials."
+important = "Requires DockerEngine and access to its socket. Open port 13000. User: admin; initial password: DockerAppData/wud/store/.tos/initial-admin-password. Docker socket access grants Docker API privileges."
+
+[hu-hu]
+name = "WUD (What's Up Docker?)"
+auth = "Manfred Martin and WUD contributors"
+descript = "Monitor Docker container image updates and configure notifications through the WUD web interface."
+release_note = "TOS 7 package of WUD 9.8.0. Persistent storage and generated initial credentials."
+important = "Requires DockerEngine and access to its socket. Open port 13000. User: admin; initial password: DockerAppData/wud/store/.tos/initial-admin-password. Docker socket access grants Docker API privileges."
+
+[pl-pl]
+name = "WUD (What's Up Docker?)"
+auth = "Manfred Martin and WUD contributors"
+descript = "Monitor Docker container image updates and configure notifications through the WUD web interface."
+release_note = "TOS 7 package of WUD 9.8.0. Persistent storage and generated initial credentials."
+important = "Requires DockerEngine and access to its socket. Open port 13000. User: admin; initial password: DockerAppData/wud/store/.tos/initial-admin-password. Docker socket access grants Docker API privileges."
+
+[tr-tr]
+name = "WUD (What's Up Docker?)"
+auth = "Manfred Martin and WUD contributors"
+descript = "Monitor Docker container image updates and configure notifications through the WUD web interface."
+release_note = "TOS 7 package of WUD 9.8.0. Persistent storage and generated initial credentials."
+important = "Requires DockerEngine and access to its socket. Open port 13000. User: admin; initial password: DockerAppData/wud/store/.tos/initial-admin-password. Docker socket access grants Docker API privileges."
+
+[ru-ru]
+name = "WUD (What's Up Docker?)"
+auth = "Manfred Martin and WUD contributors"
+descript = "Monitor Docker container image updates and configure notifications through the WUD web interface."
+release_note = "TOS 7 package of WUD 9.8.0. Persistent storage and generated initial credentials."
+important = "Requires DockerEngine and access to its socket. Open port 13000. User: admin; initial password: DockerAppData/wud/store/.tos/initial-admin-password. Docker socket access grants Docker API privileges."
+
+[pt-pt]
+name = "WUD (What's Up Docker?)"
+auth = "Manfred Martin and WUD contributors"
+descript = "Monitor Docker container image updates and configure notifications through the WUD web interface."
+release_note = "TOS 7 package of WUD 9.8.0. Persistent storage and generated initial credentials."
+important = "Requires DockerEngine and access to its socket. Open port 13000. User: admin; initial password: DockerAppData/wud/store/.tos/initial-admin-password. Docker socket access grants Docker API privileges."
+
+[cs-cz]
+name = "WUD (What's Up Docker?)"
+auth = "Manfred Martin and WUD contributors"
+descript = "Monitor Docker container image updates and configure notifications through the WUD web interface."
+release_note = "TOS 7 package of WUD 9.8.0. Persistent storage and generated initial credentials."
+important = "Requires DockerEngine and access to its socket. Open port 13000. User: admin; initial password: DockerAppData/wud/store/.tos/initial-admin-password. Docker socket access grants Docker API privileges."
+
+[da-dk]
+name = "WUD (What's Up Docker?)"
+auth = "Manfred Martin and WUD contributors"
+descript = "Monitor Docker container image updates and configure notifications through the WUD web interface."
+release_note = "TOS 7 package of WUD 9.8.0. Persistent storage and generated initial credentials."
+important = "Requires DockerEngine and access to its socket. Open port 13000. User: admin; initial password: DockerAppData/wud/store/.tos/initial-admin-password. Docker socket access grants Docker API privileges."
+
+[nl-nl]
+name = "WUD (What's Up Docker?)"
+auth = "Manfred Martin and WUD contributors"
+descript = "Monitor Docker container image updates and configure notifications through the WUD web interface."
+release_note = "TOS 7 package of WUD 9.8.0. Persistent storage and generated initial credentials."
+important = "Requires DockerEngine and access to its socket. Open port 13000. User: admin; initial password: DockerAppData/wud/store/.tos/initial-admin-password. Docker socket access grants Docker API privileges."
+
+[nb-no]
+name = "WUD (What's Up Docker?)"
+auth = "Manfred Martin and WUD contributors"
+descript = "Monitor Docker container image updates and configure notifications through the WUD web interface."
+release_note = "TOS 7 package of WUD 9.8.0. Persistent storage and generated initial credentials."
+important = "Requires DockerEngine and access to its socket. Open port 13000. User: admin; initial password: DockerAppData/wud/store/.tos/initial-admin-password. Docker socket access grants Docker API privileges."
+
+[sv-se]
+name = "WUD (What's Up Docker?)"
+auth = "Manfred Martin and WUD contributors"
+descript = "Monitor Docker container image updates and configure notifications through the WUD web interface."
+release_note = "TOS 7 package of WUD 9.8.0. Persistent storage and generated initial credentials."
+important = "Requires DockerEngine and access to its socket. Open port 13000. User: admin; initial password: DockerAppData/wud/store/.tos/initial-admin-password. Docker socket access grants Docker API privileges."
+
+[el-gr]
+name = "WUD (What's Up Docker?)"
+auth = "Manfred Martin and WUD contributors"
+descript = "Monitor Docker container image updates and configure notifications through the WUD web interface."
+release_note = "TOS 7 package of WUD 9.8.0. Persistent storage and generated initial credentials."
+important = "Requires DockerEngine and access to its socket. Open port 13000. User: admin; initial password: DockerAppData/wud/store/.tos/initial-admin-password. Docker socket access grants Docker API privileges."
+
+[ro-ro]
+name = "WUD (What's Up Docker?)"
+auth = "Manfred Martin and WUD contributors"
+descript = "Monitor Docker container image updates and configure notifications through the WUD web interface."
+release_note = "TOS 7 package of WUD 9.8.0. Persistent storage and generated initial credentials."
+important = "Requires DockerEngine and access to its socket. Open port 13000. User: admin; initial password: DockerAppData/wud/store/.tos/initial-admin-password. Docker socket access grants Docker API privileges."
+
+[th-th]
+name = "WUD (What's Up Docker?)"
+auth = "Manfred Martin and WUD contributors"
+descript = "Monitor Docker container image updates and configure notifications through the WUD web interface."
+release_note = "TOS 7 package of WUD 9.8.0. Persistent storage and generated initial credentials."
+important = "Requires DockerEngine and access to its socket. Open port 13000. User: admin; initial password: DockerAppData/wud/store/.tos/initial-admin-password. Docker socket access grants Docker API privileges."
+
+[vi-vn]
+name = "WUD (What's Up Docker?)"
+auth = "Manfred Martin and WUD contributors"
+descript = "Monitor Docker container image updates and configure notifications through the WUD web interface."
+release_note = "TOS 7 package of WUD 9.8.0. Persistent storage and generated initial credentials."
+important = "Requires DockerEngine and access to its socket. Open port 13000. User: admin; initial password: DockerAppData/wud/store/.tos/initial-admin-password. Docker socket access grants Docker API privileges."
+
+[id-id]
+name = "WUD (What's Up Docker?)"
+auth = "Manfred Martin and WUD contributors"
+descript = "Monitor Docker container image updates and configure notifications through the WUD web interface."
+release_note = "TOS 7 package of WUD 9.8.0. Persistent storage and generated initial credentials."
+important = "Requires DockerEngine and access to its socket. Open port 13000. User: admin; initial password: DockerAppData/wud/store/.tos/initial-admin-password. Docker socket access grants Docker API privileges."
+
+[ar-sa]
+name = "WUD (What's Up Docker?)"
+auth = "Manfred Martin and WUD contributors"
+descript = "Monitor Docker container image updates and configure notifications through the WUD web interface."
+release_note = "TOS 7 package of WUD 9.8.0. Persistent storage and generated initial credentials."
+important = "Requires DockerEngine and access to its socket. Open port 13000. User: admin; initial password: DockerAppData/wud/store/.tos/initial-admin-password. Docker socket access grants Docker API privileges."
+
+[he-il]
+name = "WUD (What's Up Docker?)"
+auth = "Manfred Martin and WUD contributors"
+descript = "Monitor Docker container image updates and configure notifications through the WUD web interface."
+release_note = "TOS 7 package of WUD 9.8.0. Persistent storage and generated initial credentials."
+important = "Requires DockerEngine and access to its socket. Open port 13000. User: admin; initial password: DockerAppData/wud/store/.tos/initial-admin-password. Docker socket access grants Docker API privileges."

@@ -1,0 +1,10 @@
+{
+  "version": "9.8.0",
+  "tnas": {
+    "x86_64": null,
+    "aarch64": null
+  },
+  "docker_hub_source_reviewed": false,
+  "app_id_availability_confirmed": false,
+  "publisher_account_2fa_confirmed": false
+}
