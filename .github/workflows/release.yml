@@ -1,0 +1,54 @@
+name: Prepare reviewed release
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    uses: ./.github/workflows/ci.yml
+    permissions:
+      contents: read
+
+  draft:
+    needs: validate
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0 # v5
+        with:
+          pattern: validation-*
+          path: evidence
+      - name: Verify evidence and release tag
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          test "$GITHUB_REF_TYPE" = tag
+          python3 scripts/build.py
+          mkdir -p reports
+          for arch in x86_64 aarch64; do
+            cmp "evidence/validation-$arch/dist/$arch/wud.tar.gz" "dist/$arch/wud.tar.gz"
+            cp "evidence/validation-$arch/reports/trivy-$arch.json" reports/
+            cp "evidence/validation-$arch/reports/scan-$arch.json" reports/
+          done
+          python3 scripts/release_gate.py "$RELEASE_TAG"
+      - name: Create draft release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          gh release create "$RELEASE_TAG" --verify-tag --draft --title "$RELEASE_TAG" --notes-file docs/release-notes.md dist/release/wud_x86_64.tar.gz dist/release/wud_aarch64.tar.gz dist/release/SHA256SUMS reports/trivy-x86_64.json reports/trivy-aarch64.json

@@ -1,0 +1,187 @@
+{
+  "scan_date": "2026-11-10",
+  "scanner": "Trivy 0.76.2",
+  "upstream_image": "getwud/wud:9.8.0@sha256:5a45a94c2c3e9c26e052c62bbc5bef9f945e3f7826dc446b5c71586a1238ed40",
+  "architectures": {
+    "x86_64": {
+      "counts": {
+        "MEDIUM": 17,
+        "HIGH": 10,
+        "LOW": 1
+      },
+      "report_sha256": "8f0deaa0a701477623dd49f8e3f2b7cfb42f0529393b63c7bfc56d8925e4eb32",
+      "high_findings": [
+        {
+          "VulnerabilityID": "CVE-2026-102276",
+          "PkgName": "brace-expansion",
+          "PkgPath": "usr/local/lib/node_modules/npm/node_modules/brace-expansion/package.json",
+          "InstalledVersion": "5.0.9",
+          "FixedVersion": "5.0.10, 3.0.7, 2.1.5, 1.1.19",
+          "Severity": "HIGH"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-102278",
+          "PkgName": "brace-expansion",
+          "PkgPath": "usr/local/lib/node_modules/npm/node_modules/brace-expansion/package.json",
+          "InstalledVersion": "5.0.9",
+          "FixedVersion": "5.0.11, 3.0.8, 2.1.6, 1.1.20",
+          "Severity": "HIGH"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-109383",
+          "PkgName": "undici",
+          "PkgPath": "usr/local/lib/node_modules/npm/node_modules/undici/package.json",
+          "InstalledVersion": "6.28.0",
+          "FixedVersion": "6.29.1, 7.30.1, 8.12.2",
+          "Severity": "HIGH"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-109869",
+          "PkgName": "undici",
+          "PkgPath": "usr/local/lib/node_modules/npm/node_modules/undici/package.json",
+          "InstalledVersion": "6.28.0",
+          "FixedVersion": "6.29.1, 7.30.1, 8.12.2",
+          "Severity": "HIGH"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-19534",
+          "PkgName": "undici",
+          "PkgPath": "usr/local/lib/node_modules/npm/node_modules/undici/package.json",
+          "InstalledVersion": "6.28.0",
+          "FixedVersion": "6.28.1, 7.29.1, 8.10.2",
+          "Severity": "HIGH"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-87018",
+          "PkgName": "undici",
+          "PkgPath": "usr/local/lib/node_modules/npm/node_modules/undici/package.json",
+          "InstalledVersion": "6.28.0",
+          "FixedVersion": "6.29.1, 7.30.1, 8.12.2",
+          "Severity": "HIGH"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-109383",
+          "PkgName": "undici",
+          "PkgPath": "home/node/app/node_modules/undici/package.json",
+          "InstalledVersion": "8.11.2",
+          "FixedVersion": "6.29.1, 7.30.1, 8.12.2",
+          "Severity": "HIGH"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-109829",
+          "PkgName": "undici",
+          "PkgPath": "home/node/app/node_modules/undici/package.json",
+          "InstalledVersion": "8.11.2",
+          "FixedVersion": "7.30.1, 8.12.2",
+          "Severity": "HIGH"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-109869",
+          "PkgName": "undici",
+          "PkgPath": "home/node/app/node_modules/undici/package.json",
+          "InstalledVersion": "8.11.2",
+          "FixedVersion": "6.29.1, 7.30.1, 8.12.2",
+          "Severity": "HIGH"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-87018",
+          "PkgName": "undici",
+          "PkgPath": "home/node/app/node_modules/undici/package.json",
+          "InstalledVersion": "8.11.2",
+          "FixedVersion": "6.29.1, 7.30.1, 8.12.2",
+          "Severity": "HIGH"
+        }
+      ]
+    },
+    "aarch64": {
+      "counts": {
+        "MEDIUM": 17,
+        "HIGH": 10,
+        "LOW": 1
+      },
+      "report_sha256": "8f7c6383c2e23cc88f194eca831082c537893693b74050e9b143b44fc8e011c9",
+      "high_findings": [
+        {
+          "VulnerabilityID": "CVE-2026-102276",
+          "PkgName": "brace-expansion",
+          "PkgPath": "usr/local/lib/node_modules/npm/node_modules/brace-expansion/package.json",
+          "InstalledVersion": "5.0.9",
+          "FixedVersion": "5.0.10, 3.0.7, 2.1.5, 1.1.19",
+          "Severity": "HIGH"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-102278",
+          "PkgName": "brace-expansion",
+          "PkgPath": "usr/local/lib/node_modules/npm/node_modules/brace-expansion/package.json",
+          "InstalledVersion": "5.0.9",
+          "FixedVersion": "5.0.11, 3.0.8, 2.1.6, 1.1.20",
+          "Severity": "HIGH"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-109383",
+          "PkgName": "undici",
+          "PkgPath": "usr/local/lib/node_modules/npm/node_modules/undici/package.json",
+          "InstalledVersion": "6.28.0",
+          "FixedVersion": "6.29.1, 7.30.1, 8.12.2",
+          "Severity": "HIGH"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-109869",
+          "PkgName": "undici",
+          "PkgPath": "usr/local/lib/node_modules/npm/node_modules/undici/package.json",
+          "InstalledVersion": "6.28.0",
+          "FixedVersion": "6.29.1, 7.30.1, 8.12.2",
+          "Severity": "HIGH"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-19534",
+          "PkgName": "undici",
+          "PkgPath": "usr/local/lib/node_modules/npm/node_modules/undici/package.json",
+          "InstalledVersion": "6.28.0",
+          "FixedVersion": "6.28.1, 7.29.1, 8.10.2",
+          "Severity": "HIGH"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-87018",
+          "PkgName": "undici",
+          "PkgPath": "usr/local/lib/node_modules/npm/node_modules/undici/package.json",
+          "InstalledVersion": "6.28.0",
+          "FixedVersion": "6.29.1, 7.30.1, 8.12.2",
+          "Severity": "HIGH"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-109383",
+          "PkgName": "undici",
+          "PkgPath": "home/node/app/node_modules/undici/package.json",
+          "InstalledVersion": "8.11.2",
+          "FixedVersion": "6.29.1, 7.30.1, 8.12.2",
+          "Severity": "HIGH"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-109829",
+          "PkgName": "undici",
+          "PkgPath": "home/node/app/node_modules/undici/package.json",
+          "InstalledVersion": "8.11.2",
+          "FixedVersion": "7.30.1, 8.12.2",
+          "Severity": "HIGH"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-109869",
+          "PkgName": "undici",
+          "PkgPath": "home/node/app/node_modules/undici/package.json",
+          "InstalledVersion": "8.11.2",
+          "FixedVersion": "6.29.1, 7.30.1, 8.12.2",
+          "Severity": "HIGH"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-87018",
+          "PkgName": "undici",
+          "PkgPath": "home/node/app/node_modules/undici/package.json",
+          "InstalledVersion": "8.11.2",
+          "FixedVersion": "6.29.1, 7.30.1, 8.12.2",
+          "Severity": "HIGH"
+        }
+      ]
+    }
+  }
+}

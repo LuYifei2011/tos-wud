@@ -1,0 +1,50 @@
+version: "3.8"
+
+services:
+  wud:
+    image: @@IMAGE@@
+    container_name: wud
+    restart: unless-stopped
+    user: "1000:1000"
+    group_add:
+      - "@@DOCKER_GID@@"
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    ports:
+      - "13000:3000"
+    volumes:
+      - /Volume1/DockerAppData/wud/store:/store
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      TZ: Asia/Shanghai
+      WUD_SERVER_PORT: "3000"
+      WUD_STORE_PATH: /store
+      WUD_LOG_FORMAT: json
+      WUD_WATCHER_LOCAL_SOCKET: /var/run/docker.sock
+      WUD_WATCHER_LOCAL_WATCHBYDEFAULT: "true"
+      WUD_WATCHER_LOCAL_CRON: "0 * * * *"
+    labels:
+      wud.watch: "false"
+    command:
+      - node
+      - -e
+      - |
+@@BOOTSTRAP@@
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "--silent", "http://127.0.0.1:3000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 60s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+x-app-meta:
+  web:
+    port: 13000
+    protocol: http

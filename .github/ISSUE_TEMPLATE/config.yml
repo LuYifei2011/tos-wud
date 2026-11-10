@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: WUD upstream support
+    url: https://github.com/getwud/wud/issues
+    about: Application behavior unrelated to TOS packaging.

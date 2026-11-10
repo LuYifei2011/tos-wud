@@ -1,0 +1,79 @@
+name: Validate packages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  validate:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: x86_64
+            runner: ubuntu-24.04
+          - platform: aarch64
+            runner: ubuntu-24.04-arm
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: '24'
+      - name: Test and build
+        env:
+          TARGET_PLATFORM: ${{ matrix.platform }}
+        run: |
+          node --test tests/start.test.cjs
+          python3 -m unittest discover -s tests -p 'test_*.py'
+          python3 scripts/build.py --platform "$TARGET_PLATFORM"
+          python3 scripts/check.py --platform "$TARGET_PLATFORM"
+          cp "dist/$TARGET_PLATFORM/SHA256SUMS" build/first-sha256.txt
+          python3 scripts/build.py --platform "$TARGET_PLATFORM"
+          cmp build/first-sha256.txt "dist/$TARGET_PLATFORM/SHA256SUMS"
+      - name: Official TOS checker
+        env:
+          TARGET_PLATFORM: ${{ matrix.platform }}
+        run: |
+          checker=$(python3 scripts/tools.py selftest)
+          "$checker" -c "dist/$TARGET_PLATFORM/wud.tar.gz"
+      - name: Container lifecycle
+        env:
+          TARGET_PLATFORM: ${{ matrix.platform }}
+        run: python3 scripts/smoke.py --platform "$TARGET_PLATFORM"
+      - name: Browser validation
+        if: matrix.platform == 'x86_64'
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund
+          npx playwright install --with-deps chromium
+          python3 scripts/smoke.py --platform x86_64 --ui
+      - name: Scan packaged image
+        env:
+          TARGET_PLATFORM: ${{ matrix.platform }}
+        run: python3 scripts/scan.py --platform "$TARGET_PLATFORM"
+      - name: Upload validation evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: validation-${{ matrix.platform }}
+          path: |
+            dist/${{ matrix.platform }}/
+            reports/
+          if-no-files-found: error
+          retention-days: 30

@@ -1,0 +1,10 @@
+{
+  "name": "tos-wud-validation",
+  "version": "9.8.0",
+  "private": true,
+  "license": "MIT",
+  "description": "Browser validation tooling for the WUD TOS package",
+  "devDependencies": {
+    "playwright": "1.65.0"
+  }
+}
