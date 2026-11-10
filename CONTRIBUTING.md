@@ -1,5 +1,7 @@
 # Contributing
 
+Maintainer commits use the configured 1Password SSH signing key (`git commit -S`). Confirm GitHub marks each maintainer commit as **Verified** before releasing.
+
 Build tooling requires Python 3.12+, Node.js 24 and Docker Compose. Packaging uses the Python standard library. Run:
 
 ```sh

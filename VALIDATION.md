@@ -13,9 +13,10 @@
 | 单元测试 | Node 启动逻辑 6/6；Python 商店格式防回归 5/5 |
 | 可复现构建 | 连续两次构建的两个应用包摘要各自相同 |
 | 官方 ARM64 镜像生命周期 | UID 1000、健康检查、初始账号登录、修改密码、强制重建后新密码有效/旧密码失效、会话密钥保留、认证 API 访问通过 |
-| 官方 x86_64 镜像生命周期 | 同上，由 Docker Desktop 在 ARM64 主机模拟运行；GitHub CI 配置使用两个架构的原生 runner |
+| 官方 x86_64 镜像生命周期 | 同上，本机通过 Docker Desktop 模拟运行；GitHub 两架构原生 runner 的构建、官方包检查、生命周期测试也均通过 |
 | 网页 | Playwright Chromium：登录页、使用已修改凭据登录、仪表板、无页面 JS 错误和桌面横向溢出；截图在本地 `reports/screenshots/aarch64/` |
 | 工作流静态检查 | actionlint 通过 `.github/workflows/ci.yml` 与 `release.yml` |
+| 云端原生验证 | [签名提交的 CI](https://github.com/LuYifei2011/tos-wud/actions/runs/42803927082)：两架构功能检查与 x86_64 网页验证均通过；两个任务均仅在镜像漏洞扫描步骤被阻止 |
 | 测试资源 | 所有生命周期测试均在 finally 阶段清理容器、对应网络和临时凭据目录 |
 
 当前应用包 SHA256：
