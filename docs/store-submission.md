@@ -13,7 +13,7 @@
 | Web entry | `http://${ip}:13000` |
 | Permissions | README 权限表；需要宿主 Docker API；Shared Folder: None |
 | Initial login | admin；密码在首次启动时随机生成，位置见 README |
-| Data retention | `/store` 绑定到平台选择的应用数据卷；保留数据卸载可用于重装 |
+| Data retention | 包内默认 `/Volume1/DockerAppData/wud/store:/store`；实际挂载、保留数据重装及删除数据卸载待 TNAS 实机确认 |
 | License | 封装与上游 WUD 均为 MIT；许可已随相应代码和图标包含在包中 |
 
 提交资料应同时包含完整公开源码、安装说明、Release 包附件和校验和、镜像扫描结果、TNAS 实机测试记录。开发者平台会自行计算包摘要；本项目的 SHA256 附件供用户校验。

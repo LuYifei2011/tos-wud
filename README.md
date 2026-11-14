@@ -10,13 +10,13 @@
 
 应用 ID 为 `wud`，依赖应用中心的 `DockerEngine`。默认访问地址为 `http://NAS_IP:13000`。安装时需要从 Docker Hub 拉取已固定摘要的 `getwud/wud:9.8.0`，包内不包含镜像。
 
-首次启动创建用户 **admin**，密码随机生成，位于所选存储卷：
+首次启动创建用户 **admin**，密码随机生成，保存在容器内 `/store/.tos/initial-admin-password`。包内 Compose 默认绑定的宿主路径为：
 
 ```sh
 sudo cat /Volume1/DockerAppData/wud/store/.tos/initial-admin-password
 ```
 
-将 `Volume1` 替换为实际安装卷。也可在安装后的 Compose 目录执行 `docker compose exec wud cat /store/.tos/initial-admin-password`。凭据目录权限为 `0700`，文件为 `0600`；密码不写入日志。
+安装后先核对容器 `/store` 的实际宿主挂载路径；TOS 是否按安装卷重写此绑定尚待实机验证。也可在安装后的 Compose 目录执行 `docker compose exec wud cat /store/.tos/initial-admin-password`。凭据目录权限为 `0700`，文件为 `0600`；密码不写入日志。
 
 在 WUD 中修改密码后，重启和容器重建均保留新密码。初始密码文件保留的是初始值；稳定的会话密钥保存在 `.tos/session-secret`。
 
@@ -88,9 +88,9 @@ CI 使用两个原生架构 runner，执行单元测试、包规范检查、官�
 
 ## 数据与卸载
 
-持久化目录为 `/Volume<N>/DockerAppData/wud/store`，其中包含 SQLite 数据库、用户配置、会话和 `.tos` 凭据目录。
+容器内 `/store` 包含 SQLite 数据库、用户配置、会话和 `.tos` 凭据目录。包内 Compose 将它绑定到 `/Volume1/DockerAppData/wud/store`；安装后应以容器的实际挂载为准。
 
-TOS 当前 Docker 应用更新方式为卸载后重装，并选择保留数据。操作前停止应用并备份整个 `store`；不要只复制正在使用的 SQLite 主文件。选择同时删除应用数据时，数据库和凭据也会删除。
+本封装预期通过保留数据卸载后重装来恢复配置，并在选择删除数据时清除数据库和凭据。这两条应用中心路径及平台对挂载的改写、清理范围尚待 TNAS 实机验收，当前不能承诺其结果。操作前停止应用，按实际挂载路径备份整个 `store`；不要只复制正在使用的 SQLite 主文件。验收步骤见[发布流程](docs/releasing.md#tnas-验证)。
 
 ## 权限与网络
 
